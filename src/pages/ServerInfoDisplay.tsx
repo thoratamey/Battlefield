@@ -22,7 +22,7 @@ const ServerInfoDisplay: React.FC = () => {
     const fetchServerData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:3001/api/servers');
+        const response = await axios.get('https://server-wykx.onrender.com/api/servers');
         if (response.data && response.data.length > 0) {
           setServerData(response.data[0]);
         } else {
