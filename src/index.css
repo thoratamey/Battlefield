@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Purista';
+  src: url('/fonts/purista-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bf-blue-500: #1C5EBE;
+  --bf-orange-500: #FF7D1F;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #15191F;
+  color: #F0F2F5;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(126, 178, 255, 0.7);
+}
+
+.border-glow {
+  box-shadow: 0 0 5px rgba(28, 94, 190, 0.5);
+}
+
+.menu-item {
+  @apply relative cursor-pointer px-4 py-2 font-bf-heading font-semibold text-lg transition-all duration-300 ease-in-out;
+}
+
+.menu-item:hover {
+  @apply text-bf-blue-100 text-glow;
+}
+
+.menu-item::after {
+  content: '';
+  @apply absolute left-0 bottom-0 w-0 h-1 bg-bf-blue-500 transition-all duration-300 ease-in-out;
+}
+
+.menu-item:hover::after {
+  @apply w-full;
+}
+
+.menu-item.active {
+  @apply text-bf-blue-100 text-glow;
+}
+
+.menu-item.active::after {
+  @apply w-full;
+}
+
+.main-btn {
+  @apply bg-bf-blue-700 hover:bg-bf-blue-600 text-white font-bf-heading font-semibold py-2 px-6 
+    border-l-2 border-t-2 border-bf-blue-300 border-r-2 border-b-2 border-bf-blue-900
+    transition-all duration-200 ease-in-out relative overflow-hidden;
+}
+
+.main-btn::before {
+  content: '';
+  @apply absolute inset-0 bg-bf-blue-500 opacity-0 transition-opacity duration-300;
+}
+
+.main-btn:hover::before {
+  @apply opacity-20;
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(28, 94, 190, 0.5);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(28, 94, 190, 0.8);
+  }
+}
+
+.bg-overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+}
+
+.animated-bg {
+  animation: backgroundPan 60s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes backgroundPan {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
