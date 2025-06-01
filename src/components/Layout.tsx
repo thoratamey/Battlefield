@@ -11,7 +11,7 @@ interface LayoutProps {
 }
 
 // IMPORTANT: Replace this with the actual path or URL to YOUR background image
-const yourGameBackgroundImageUrl = '/public/server-bg.jpg'; 
+const yourGameBackgroundImageUrl = '/server-bg.jpg'; 
 // Example: if it's in public/images/my-bg.jpg, use '/images/my-bg.jpg'
 
 const Layout: React.FC<LayoutProps> = (/*{ children }*/) => {
